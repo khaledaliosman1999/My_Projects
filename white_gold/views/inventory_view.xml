@@ -1,0 +1,34 @@
+<odoo>
+    <record id="inventory_tree" model="ir.ui.view">
+        <field name="name">inventory list</field>
+        <field name="model">inventory.custom</field>
+        <field name="arch" type="xml">
+            <list>
+                <header>
+                    <button name="action_export_inventory_csv" string="Export CSV" type="object"
+                            class="btn-success"/>
+                </header>
+
+                <field name="product_code"/>
+                <field name="name" string="Product Name"/>
+                <field name="product_price" string="Price"/>
+                <field name="sold_quantity" string="Sold Quantity"/>
+                <field name="quantity_available" string="Available Quantity"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="inventory_search" model="ir.ui.view">
+        <field name="name">inventory search</field>
+        <field name="model">inventory.custom</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <record id="inventory_action" model="ir.actions.act_window">
+        <field name="name">Inventory</field>
+        <field name="res_model">inventory.custom</field>
+    </record>
+</odoo>
